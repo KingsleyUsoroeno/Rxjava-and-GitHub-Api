@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.kingtech.rxjavaandroid.network.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:profileImage="@{user.profileUrl}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Username:"
+            android:textSize="14sp"
+            app:fontFamily="sans-serif-medium"
+            app:layout_constraintStart_toEndOf="@id/profileImageView"
+            app:layout_constraintTop_toTopOf="@id/profileImageView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{user.name}"
+            android:textSize="18sp"
+            app:fontFamily="sans-serif-condensed-medium"
+            app:layout_constraintBottom_toBottomOf="@id/userName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userName"
+            app:layout_constraintTop_toTopOf="@id/userName"
+            tools:text="Kingsley Usoro" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/projectTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Project:"
+            android:textSize="14sp"
+            app:fontFamily="sans-serif-medium"
+            app:layout_constraintStart_toStartOf="@id/userName"
+            app:layout_constraintTop_toBottomOf="@id/userName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/projectNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{user.projectName}"
+            android:textSize="16sp"
+            app:fontFamily="sans-serif-condensed-medium"
+            app:layout_constraintBottom_toBottomOf="@id/projectTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/projectTextView"
+            app:layout_constraintTop_toTopOf="@id/projectTextView"
+            tools:text="Android TextConverter" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
