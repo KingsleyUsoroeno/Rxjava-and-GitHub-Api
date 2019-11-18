@@ -2,6 +2,10 @@ package com.kingtech.rxjavaandroid.presenter;
 
 import android.view.View;
 
+import com.kingtech.rxjavaandroid.network.User;
+
+import java.util.List;
+
 public interface UserView {
 
     void dismissProgressBar();
@@ -12,6 +16,6 @@ public interface UserView {
 
     void hideRecyclerView();
 
-    void showRecyclerView();
+    void showRecyclerView(List<User> users);
 
 }
